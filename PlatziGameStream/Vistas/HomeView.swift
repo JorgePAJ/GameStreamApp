@@ -87,38 +87,44 @@ struct Home:View {
     
    
     
-    @State var textoBusqueda:String = ""
+    @State var textoBusqueda = ""
     
     var body: some View{
-        
-        
+    
+
         ZStack{
-        
             Color("Marine").ignoresSafeArea()
-            
-           
-            
             VStack{
-                
-                
-                
-             Text("Hola")
-                
-                
-                
+                Image("AppLogo").resizable()
+                     .aspectRatio(contentMode: .fit)
+                     .frame(width: 250)
+                     .padding(.horizontal, 11.0)
+                HStack{
+                    Button(action: buscar) {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(textoBusqueda.isEmpty ? Color(.white) : Color("Dark-Cyan"))
+                    }
+                    ZStack(alignment: .leading){
+                        if textoBusqueda.isEmpty{
+                            Text("Buscar un video")
+                                .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255, opacity: 1))
+                        }
+                        TextField("",text: $textoBusqueda)
+                            .foregroundColor(.white)
+                    }
+                }
+                .padding([.top,.leading,.bottom],11)
+                .background(Color("Blue-Gray"))
+                .clipShape(Capsule())
                 
             }.padding(.horizontal, 18.0)
             
-
-        
         }.navigationBarHidden(true).navigationBarBackButtonHidden(true)
         
         
  
         
     }
-    
- 
     
     func buscar() {
         print("Buscando video que contenga \(textoBusqueda)")

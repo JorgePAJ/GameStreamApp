@@ -45,7 +45,6 @@ struct ContentView: View {
     }
 }
 
-
 struct InicioYRegistroView:View {
     
     @State var tipoInicioSesion:Bool = true
