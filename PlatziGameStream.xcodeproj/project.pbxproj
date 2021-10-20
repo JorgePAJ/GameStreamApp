@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34668D00272098CF00310E3F /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34668CFF272098CF00310E3F /* test.cpp */; };
 		36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */; };
 		36DBAC54264C8D6300996156 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC53264C8D6300996156 /* ContentView.swift */; };
 		36DBAC56264C8D6400996156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC55264C8D6400996156 /* Assets.xcassets */; };
@@ -16,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34668CFF272098CF00310E3F /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		36DBAC4E264C8D6300996156 /* PlatziGameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziGameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatziGameStreamApp.swift; sourceTree = "<group>"; };
 		36DBAC53264C8D6300996156 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,7 +38,6 @@
 		36DBAC45264C8D6300996156 = {
 			isa = PBXGroup;
 			children = (
-				34668CFF272098CF00310E3F /* test.cpp */,
 				36DBAC50264C8D6300996156 /* PlatziGameStream */,
 				36DBAC4F264C8D6300996156 /* Products */,
 			);
@@ -154,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				36DE2C6F264E4CC600DCEF51 /* HomeView.swift in Sources */,
-				34668D00272098CF00310E3F /* test.cpp in Sources */,
 				36DBAC54264C8D6300996156 /* ContentView.swift in Sources */,
 				36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */,
 			);

@@ -3,7 +3,7 @@
 //  PlatziGameStream
 //
 //
-
+// Jorge Plasencia Ahm Jorgensen
 //
 //  ContentView.swift
 //  GameStream
