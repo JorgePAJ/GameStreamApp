@@ -37,9 +37,10 @@ struct ContentView: View {
                 
                 InicioYRegistroView()
                 
+            }.navigationBarHidden(true)
+            
             }
             
-            }.navigationBarHidden(true)
             
         }
     }

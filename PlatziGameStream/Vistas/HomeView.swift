@@ -28,8 +28,7 @@ struct HomeView: View {
                         }.tag(0)
                         
                  
-                    Text("Juegos")
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                    GamesView()
                         .tabItem {
                             Image(systemName: "gamecontroller")
                             Text("Juegos")
@@ -122,9 +121,11 @@ struct Home:View {
                 }
             }.padding(.horizontal, 18.0)
             
-        }.navigationBarHidden(true).navigationBarBackButtonHidden(true)
-        
+        }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
+
     
     func buscar() {
         print("Buscando video que contenga \(textoBusqueda)")
