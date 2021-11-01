@@ -15,7 +15,7 @@ struct GamesView: View {
             .navigationBarBackButtonHidden(true)
             .onAppear {
                 print("Primer elemento del JSON: \(todosLosVideojuegos.gamesInfo[0])")
-                print("Titutlo del primer videojuego del JSON: \(todosLosVideojuegos.gamesInfo.title)")
+                print("Titutlo del primer videojuego del JSON: \(todosLosVideojuegos.gamesInfo[0].title)")
             }
     }
 }
