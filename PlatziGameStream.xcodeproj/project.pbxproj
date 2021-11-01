@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		343AD0412721D67600B6B3A6 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0402721D67600B6B3A6 /* GamesView.swift */; };
 		343AD0462721DC4500B6B3A6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0452721DC4500B6B3A6 /* Models.swift */; };
 		3487F50A272F668E00BE8E7E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487F509272F668E00BE8E7E /* ViewModel.swift */; };
+		34F8763B27305AD9005CB6C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 34F8763A27305AD9005CB6C4 /* Kingfisher */; };
 		36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */; };
 		36DBAC54264C8D6300996156 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC53264C8D6300996156 /* ContentView.swift */; };
 		36DBAC56264C8D6400996156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC55264C8D6400996156 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		343AD0402721D67600B6B3A6 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		343AD0452721DC4500B6B3A6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3487F509272F668E00BE8E7E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		34F8763827305AA3005CB6C4 /* Kingfisher */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Kingfisher; path = ../../../../../../../Documents/Kingfisher; sourceTree = "<group>"; };
 		36DBAC4E264C8D6300996156 /* PlatziGameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziGameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatziGameStreamApp.swift; sourceTree = "<group>"; };
 		36DBAC53264C8D6300996156 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F8763B27305AD9005CB6C4 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +60,18 @@
 			path = VistasModelos;
 			sourceTree = "<group>";
 		};
+		34F8763727305AA3005CB6C4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				34F8763827305AA3005CB6C4 /* Kingfisher */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		36DBAC45264C8D6300996156 = {
 			isa = PBXGroup;
 			children = (
+				34F8763727305AA3005CB6C4 /* Packages */,
 				36DBAC50264C8D6300996156 /* PlatziGameStream */,
 				36DBAC4F264C8D6300996156 /* Products */,
 			);
@@ -121,6 +133,9 @@
 			dependencies = (
 			);
 			name = PlatziGameStream;
+			packageProductDependencies = (
+				34F8763A27305AD9005CB6C4 /* Kingfisher */,
+			);
 			productName = PlatziGameStream;
 			productReference = 36DBAC4E264C8D6300996156 /* PlatziGameStream.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 36DBAC45264C8D6300996156;
+			packageReferences = (
+				34F8763927305AD9005CB6C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 36DBAC4F264C8D6300996156 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -311,7 +329,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatziGameStream/Preview Content\"";
-				DEVELOPMENT_TEAM = LDRX8T8P6F;
+				DEVELOPMENT_TEAM = 2NY3LJ8MC2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PlatziGameStream/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -319,7 +337,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.gamestream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.gamestreamapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -335,7 +353,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatziGameStream/Preview Content\"";
-				DEVELOPMENT_TEAM = LDRX8T8P6F;
+				DEVELOPMENT_TEAM = 2NY3LJ8MC2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PlatziGameStream/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -343,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.gamestream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.gamestreamapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34F8763927305AD9005CB6C4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34F8763A27305AD9005CB6C4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34F8763927305AD9005CB6C4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36DBAC46264C8D6300996156 /* Project object */;
 }

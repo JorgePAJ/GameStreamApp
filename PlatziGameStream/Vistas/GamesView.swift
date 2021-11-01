@@ -6,34 +6,37 @@
 //
 
 import SwiftUI
+import Kingfisher
 
-struct GamesView: View {
+struct GamesView:View {
+    
     @ObservedObject var todosLosVideojuegos = ViewModel()
     
     @State var gameviewIsActive: Bool = false
-    @State var url: String = ""
-    @State var titulo: String = ""
-    @State var studio: String = ""
+    @State var url:String = ""
+    @State var titulo:String = ""
+    @State var studio:String = ""
     @State var calificacion: String = ""
     @State var anoPublicacion: String = ""
-    @State var description: String = ""
-    @State var tags: [String] = [""]
+    @State var descripcion:String = ""
+    @State var tags:[String] = [""]
     @State var imgsUrl: [String] = [""]
     
     let formaGrid = [
-        
+    
         GridItem(.flexible()),
         GridItem(.flexible())
-        
+    
     ]
     
-    var body: some View {
-        
+    var body: some View{
         
         
         ZStack{
-            Color("Marine")
-                .ignoresSafeArea()
+         
+            Color("Marine").ignoresSafeArea()
+            
+            
             VStack{
                 Text("Juegos")
                     .font(.title2)
@@ -43,47 +46,73 @@ struct GamesView: View {
                 
                 ScrollView{
                     
-                    LazyVGrid(columns: formaGrid, spacing: 8){
+                    
+                    LazyVGrid(columns:formaGrid,spacing:8){
                         
                         ForEach(todosLosVideojuegos.gamesInfo, id: \.self){
+                            
                             juego in
                             
                             Button(action: {
+                                
                                 url = juego.videosUrls.mobile
                                 titulo = juego.title
                                 studio = juego.studio
                                 calificacion = juego.contentRaiting
                                 anoPublicacion = juego.publicationYear
-                                description = juego.description
+                                descripcion = juego.description
                                 tags = juego.tags
                                 imgsUrl = juego.galleryImages
-                                
+                     
                                 print("Pulse el juego \(titulo)")
-                            }) {
+                                
+                                gameviewIsActive = true
                                 
                                 
-                                Text("\(juego.title)")
-                            }
+                            }, label: {
+                                
+                                
+                                KFImage(URL(string: juego.galleryImages[0])!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(RoundedRectangle.init(cornerRadius: 4))
+                                
+                                    .padding(.bottom,12)
+                                
+                                
+                            
+                            })
+                            
                         }
+                        
+                        
                         
                     }
                     
                     
+                    
+                    
+                    
+                    
                 }
-            }
-            .padding(.horizontal,6)
-        }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
-        .onAppear {
-            print("Primer elemento del JSON: \(todosLosVideojuegos.gamesInfo[0])")
-            print("Titutlo del primer videojuego del JSON: \(todosLosVideojuegos.gamesInfo[0].title)")
-        }
-    }
-}
-
-struct GamesView_Previews: PreviewProvider {
-    static var previews: some View {
-        GamesView()
+                
+                
+                
+                
+                
+                
+            }.padding(.horizontal,6)
+            
+            
+  
+            
+        }.navigationBarHidden(true).navigationBarBackButtonHidden(true)
+            .onAppear(perform: {
+            
+            //Muestra la información del primer elemento del json
+            print("Primer elemento del json: \(todosLosVideojuegos.gamesInfo[0])")
+            print("Titulo del primer elemento del json: \(todosLosVideojuegos.gamesInfo[0].title)")
+        })
+        
     }
 }
