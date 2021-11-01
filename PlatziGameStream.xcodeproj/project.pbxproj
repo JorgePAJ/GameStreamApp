@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		343AD0412721D67600B6B3A6 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0402721D67600B6B3A6 /* GamesView.swift */; };
 		343AD0462721DC4500B6B3A6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0452721DC4500B6B3A6 /* Models.swift */; };
-		343AD0482721DC6100B6B3A6 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0472721DC6100B6B3A6 /* ViewModels.swift */; };
+		3487F50A272F668E00BE8E7E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487F509272F668E00BE8E7E /* ViewModel.swift */; };
 		36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */; };
 		36DBAC54264C8D6300996156 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC53264C8D6300996156 /* ContentView.swift */; };
 		36DBAC56264C8D6400996156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC55264C8D6400996156 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		343AD0402721D67600B6B3A6 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		343AD0452721DC4500B6B3A6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		343AD0472721DC6100B6B3A6 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		3487F509272F668E00BE8E7E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		36DBAC4E264C8D6300996156 /* PlatziGameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziGameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatziGameStreamApp.swift; sourceTree = "<group>"; };
 		36DBAC53264C8D6300996156 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,10 +49,10 @@
 			path = Modelos;
 			sourceTree = "<group>";
 		};
-		343AD0442721DBD000B6B3A6 /* VistasModelos */ = {
+		3487F508272F667A00BE8E7E /* VistasModelos */ = {
 			isa = PBXGroup;
 			children = (
-				343AD0472721DC6100B6B3A6 /* ViewModels.swift */,
+				3487F509272F668E00BE8E7E /* ViewModel.swift */,
 			);
 			path = VistasModelos;
 			sourceTree = "<group>";
@@ -60,8 +60,6 @@
 		36DBAC45264C8D6300996156 = {
 			isa = PBXGroup;
 			children = (
-				343AD0442721DBD000B6B3A6 /* VistasModelos */,
-				343AD0422721DBA800B6B3A6 /* Modelos */,
 				36DBAC50264C8D6300996156 /* PlatziGameStream */,
 				36DBAC4F264C8D6300996156 /* Products */,
 			);
@@ -78,6 +76,8 @@
 		36DBAC50264C8D6300996156 /* PlatziGameStream */ = {
 			isa = PBXGroup;
 			children = (
+				3487F508272F667A00BE8E7E /* VistasModelos */,
+				343AD0422721DBA800B6B3A6 /* Modelos */,
 				36DBAC57264C8D6400996156 /* Preview Content */,
 				36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */,
 				36DE2C6D264E4CA000DCEF51 /* Vistas */,
@@ -175,11 +175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343AD0482721DC6100B6B3A6 /* ViewModels.swift in Sources */,
 				36DE2C6F264E4CC600DCEF51 /* HomeView.swift in Sources */,
 				36DBAC54264C8D6300996156 /* ContentView.swift in Sources */,
 				343AD0412721D67600B6B3A6 /* GamesView.swift in Sources */,
 				36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */,
+				3487F50A272F668E00BE8E7E /* ViewModel.swift in Sources */,
 				343AD0462721DC4500B6B3A6 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,7 +238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -293,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -311,7 +311,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatziGameStream/Preview Content\"";
-				DEVELOPMENT_TEAM = PR2KB3T2YF;
+				DEVELOPMENT_TEAM = LDRX8T8P6F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PlatziGameStream/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -319,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.platziteam.PlatziGameStream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.gamestream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -335,7 +335,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatziGameStream/Preview Content\"";
-				DEVELOPMENT_TEAM = PR2KB3T2YF;
+				DEVELOPMENT_TEAM = LDRX8T8P6F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PlatziGameStream/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -343,7 +343,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.platziteam.PlatziGameStream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.gamestream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
