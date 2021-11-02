@@ -103,7 +103,11 @@ struct GamesView:View {
                 
             }.padding(.horizontal,6)
             
-            
+            NavigationLink(destination: GameView(url: url, titulo: titulo, studio: studio, calificacion: calificacion, anoPublicacion: anoPublicacion, descripcion: descripcion, tags: tags, imgsUrl: imgsUrl),
+                isActive: $gameviewIsActive,
+                label: {
+                    EmptyView()
+                })
   
             
         }.navigationBarHidden(true).navigationBarBackButtonHidden(true)
@@ -116,3 +120,4 @@ struct GamesView:View {
         
     }
 }
+

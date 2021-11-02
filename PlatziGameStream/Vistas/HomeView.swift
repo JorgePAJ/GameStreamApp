@@ -70,8 +70,9 @@ struct HomeView: View {
     
     init() {
         
-        UITabBar.appearance().barTintColor = UIColor (Color("TabBar-Color"))
+        UITabBar.appearance().backgroundColor = UIColor (Color("TabBar-Color"))
         UITabBar.appearance().isTranslucent = true
+        UITabBar.appearance().barTintColor = UIColor (Color("TabBar-Color"))
         
         print("popular vistas")
     }
