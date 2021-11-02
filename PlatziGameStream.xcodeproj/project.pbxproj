@@ -10,6 +10,7 @@
 		343AD0412721D67600B6B3A6 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0402721D67600B6B3A6 /* GamesView.swift */; };
 		343AD0462721DC4500B6B3A6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0452721DC4500B6B3A6 /* Models.swift */; };
 		344B210D27319D2A002E8CF7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B210C27319D2A002E8CF7 /* GameView.swift */; };
+		344B210F2731C245002E8CF7 /* SearchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B210E2731C245002E8CF7 /* SearchGame.swift */; };
 		3487F50A272F668E00BE8E7E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487F509272F668E00BE8E7E /* ViewModel.swift */; };
 		34F8763B27305AD9005CB6C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 34F8763A27305AD9005CB6C4 /* Kingfisher */; };
 		36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */; };
@@ -23,6 +24,7 @@
 		343AD0402721D67600B6B3A6 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		343AD0452721DC4500B6B3A6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		344B210C27319D2A002E8CF7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		344B210E2731C245002E8CF7 /* SearchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGame.swift; sourceTree = "<group>"; };
 		3487F509272F668E00BE8E7E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		34F8763827305AA3005CB6C4 /* Kingfisher */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Kingfisher; path = ../../../../../../../Documents/Kingfisher; sourceTree = "<group>"; };
 		36DBAC4E264C8D6300996156 /* PlatziGameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziGameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +59,7 @@
 		3487F508272F667A00BE8E7E /* VistasModelos */ = {
 			isa = PBXGroup;
 			children = (
+				344B210E2731C245002E8CF7 /* SearchGame.swift */,
 				3487F509272F668E00BE8E7E /* ViewModel.swift */,
 			);
 			path = VistasModelos;
@@ -199,6 +202,7 @@
 				36DE2C6F264E4CC600DCEF51 /* HomeView.swift in Sources */,
 				36DBAC54264C8D6300996156 /* ContentView.swift in Sources */,
 				343AD0412721D67600B6B3A6 /* GamesView.swift in Sources */,
+				344B210F2731C245002E8CF7 /* SearchGame.swift in Sources */,
 				36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */,
 				3487F50A272F668E00BE8E7E /* ViewModel.swift in Sources */,
 				343AD0462721DC4500B6B3A6 /* Models.swift in Sources */,
