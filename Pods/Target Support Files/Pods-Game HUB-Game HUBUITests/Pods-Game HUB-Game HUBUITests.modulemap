@@ -1,0 +1,6 @@
+framework module Pods_Game_HUB_Game_HUBUITests {
+  umbrella header "Pods-Game HUB-Game HUBUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
