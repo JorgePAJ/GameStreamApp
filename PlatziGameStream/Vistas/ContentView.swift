@@ -96,6 +96,8 @@ struct InicioSesiónView: View {
     @State var correo:String = ""
     @State var contraseña:String = ""
     @State var isPantallaHomeActive:Bool = false
+    @State var ifNotUserFound = false
+    
     
     var body: some View {
         
@@ -139,15 +141,21 @@ struct InicioSesiónView: View {
                     .foregroundColor(Color("Dark-Cyan"))
                     .padding(.bottom)
                 
-                Button(action: iniciarSesion) {
-                    Text("Iniciar Sesión")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .frame( maxWidth: .infinity, alignment: .center)
-                        .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
-                        .overlay(RoundedRectangle(cornerRadius: 6)
-                                    .stroke(Color("Dark-Cyan"), lineWidth: 3).shadow(color: .white, radius: 6))
-                }.padding(.bottom)
+                Button(action: {iniciarSesion()},
+                                       label:
+                                       {
+                                            Text("Iniciar Sesión").fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                                .frame(maxWidth: .infinity, alignment: .center)
+                                                .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                                                .overlay(RoundedRectangle(cornerRadius: 6.0)
+                                                .stroke(Color("Dark-Cyan"), lineWidth: 1.0)
+                                                .shadow(color: .white, radius: 6))
+                                       }).alert(isPresented: $ifNotUserFound, content:
+                                                    {
+                                                        Alert(title: Text("Error"), message: Text("Usuario o contraseña incorrecta"), dismissButton: .default(Text("Entendido")))
+                                                    }
+                                                         )
                 
                 
                 
@@ -205,12 +213,24 @@ struct InicioSesiónView: View {
     }
     
     
-    func iniciarSesion() {
-                
-         print("Mi correo es \(correo) y mi contraseña es \(contraseña)")
+    func iniciarSesion(){
+        // Comienza el inicio de sesión
+        print("Estoy iniciando sesión.")
         
-        isPantallaHomeActive.toggle()
-            
+        // Creación de instancias. En este caso la clase SaveData
+        let objetoActualizadorDatos = SaveData()
+        let resultado = objetoActualizadorDatos.validar(correo: self.correo,contraseña: self.contraseña)
+        
+        if resultado == true
+        {
+            // Se activa la pantalla Home
+            ifNotUserFound = false
+            isPantallaHomeActive = true
+        }else
+        {
+            ifNotUserFound = true
+        }
+        
     }
     
     
@@ -221,7 +241,8 @@ struct RegistroView: View {
     @State var correo:String = ""
     @State var contraseña:String = ""
     @State var confirmacionContraseña:String = ""
-    
+    @State var contraseñaIsNotConfirmed:Bool = false
+    @State var isPantallaHomeActive:Bool = false
     
     var body: some View {
         
@@ -319,18 +340,25 @@ struct RegistroView: View {
                 }
                
                 
-                Button(action: registrarse) {
-                   
-                    Text("REGÍSTRATE")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .frame( maxWidth: .infinity, alignment: .center)
-                        .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 6).stroke(Color("Dark-Cyan"), lineWidth: 3).shadow(color: Color("Dark-Cyan"), radius: 6))
-   
-                       
-                }.padding(.bottom)
+                Button(action: {registrarse()},
+                                       label:
+                                       {
+                                            Text("REGÍSTRATE").fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                                .frame(maxWidth: .infinity, alignment: .center)
+                                                .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                                                .overlay(RoundedRectangle(cornerRadius: 6.0)
+                                                .stroke(Color("Dark-Cyan"), lineWidth: 1.0)
+                                                .shadow(color: .white, radius: 6))
+                                       }).alert(isPresented: $contraseñaIsNotConfirmed, content:
+                                                    {
+                                                        Alert(title: Text("Error"), message: Text("La contraseña no coincide. Confirma tu contraseña"), dismissButton: .default(Text("Entendido")))
+                                                    }
+                                                         )
+
+
+                // Navegar a la pantalla Home
+                        NavigationLink(destination: Home(), isActive: $isPantallaHomeActive, label: {EmptyView()})
                 
               
                         
@@ -383,14 +411,28 @@ struct RegistroView: View {
         //logica de tomar fotos.
     }
     
-    func registrarse()  {
+    func registrarse(){
+        // Confirmar que la contraseña haya sido escrita correctamente
+        if contraseña != confirmacionContraseña
+        {
+            contraseñaIsNotConfirmed = true
+        }else
+        {
+            // Contraseña confirmada. No se muestra la alerta.
+            contraseñaIsNotConfirmed = false
+            
+            // Objeto de la clase SavData.
+            let objetoActualizadorDatos = SaveData()
+            // Registro que no requiere nombre.
+            let resultado = objetoActualizadorDatos.registrar(correo: self.correo, contraseña: self.contraseña)
+            
+            // Activar la pantalla home
+
+            print("Se guardaron los datos con exito?: \(resultado)")
+        }
         
-        print("Me registro con el correo \(correo), la contraseña \(contraseña) y confirmación de contraseña \(confirmacionContraseña)")
-    
-        //Logica de validación
         
-    }
-    
+}
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -15,8 +15,7 @@ struct HomeView: View {
             
             
             
-            Text("Perfil")
-                .font(.system(size: 30, weight: .bold, design: .rounded)).navigationBarHidden(true).navigationBarBackButtonHidden(true)
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Perfil")
@@ -30,7 +29,8 @@ struct HomeView: View {
                 }.tag(1)
             
             
-            Home().tabItem {
+            Home()
+                .tabItem {
                 Image(systemName: "house")
                 Text("Inicio")
             }.tag(2)

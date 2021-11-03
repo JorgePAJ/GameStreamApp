@@ -112,10 +112,13 @@ struct GamesView:View {
             
         }.navigationBarHidden(true).navigationBarBackButtonHidden(true)
             .onAppear(perform: {
-            
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.3) {
+                    print("Primer elemento del json: \(todosLosVideojuegos.gamesInfo[0])")
+                    print("Titulo del primer elemento del json: \(todosLosVideojuegos.gamesInfo[0].title)")
+                    
+                }
             //Muestra la información del primer elemento del json
-            print("Primer elemento del json: \(todosLosVideojuegos.gamesInfo[0])")
-            print("Titulo del primer elemento del json: \(todosLosVideojuegos.gamesInfo[0].title)")
+            
         })
         
     }
