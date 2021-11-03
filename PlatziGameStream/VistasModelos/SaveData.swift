@@ -13,7 +13,7 @@ class SaveData {
     var nombre:String = ""
     
     
-    func registrar(correo:String, contraseña:String, nombre:String="") ->Bool{
+    func registrar(correo:String, contraseña:String, nombre:String="Default") ->Bool{
         UserDefaults.standard.set([correo,contraseña,nombre], forKey: "datosUsuario")
         return true
     }

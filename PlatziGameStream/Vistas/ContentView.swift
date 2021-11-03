@@ -13,7 +13,7 @@
 //
 
 import SwiftUI
-
+import Parse
 
 
 struct ContentView: View {
@@ -225,18 +225,35 @@ struct InicioSesiónView: View {
         
         // Creación de instancias. En este caso la clase SaveData
         let objetoActualizadorDatos = SaveData()
-        let resultado = objetoActualizadorDatos.validar(correo: self.correo,contrasena: self.contraseña)
+
         
-        if resultado == true
-        {
-            // Se activa la pantalla Home
-            ifNotUserFound = false
-            isPantallaHomeActive = true
-        }else
-        {
-            ifNotUserFound = true
-        }
-        
+//        let query = PFQuery(className: "Usuario")
+//        query.getObjectInBackground(withId: "QCJ58IgOEc") {
+//            (object, error) -> Void in
+//            if object != nil && error == nil {
+//                print(object)
+//            }else{
+//                print(error)
+//            }
+//        }
+        let query = PFQuery(className: "Usuario")
+        query.findObjectsInBackground(block: { (objects, error) -> Void in
+            if error == nil{
+                if let returnedObjects = objects{
+                    for object in returnedObjects{
+                        if object["correo"] as! String == self.correo && object["contrasena"] as! String == self.contraseña{
+                            // Se activa la pantalla Home
+                            ifNotUserFound = false
+                            isPantallaHomeActive = true
+                        }else{
+                            ifNotUserFound = true
+                        }
+                    }
+                }
+            }
+             
+        })
+    
     }
     
     
@@ -433,6 +450,20 @@ struct RegistroView: View {
             let resultado = objetoActualizadorDatos.registrar(correo: self.correo, contraseña: self.contraseña)
             
             // Activar la pantalla home
+            var usuario = PFObject(className: "Usuario")
+            usuario["correo"] = self.correo
+            usuario["contrasena"] = self.contraseña
+            usuario.saveInBackground {
+              (success: Bool, error: Error?) in
+              if (success) {
+                // The object has been saved.
+                  print("se guardaron los datos en back4app")
+              } else {
+                // There was a problem, check error.description
+                  print("No se guardaron los datos en back4app")
+              }
+            }
+            
             print("Se guardaron los datos con exito?: \(resultado)")
         }
     
