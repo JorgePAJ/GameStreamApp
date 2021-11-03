@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34A671A127332712003F0CEF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A671A027332712003F0CEF /* Model.swift */; };
 		363909392650588F007CB6B0 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363909382650588F007CB6B0 /* GameView.swift */; };
 		3639093B2650B2BF007CB6B0 /* SearchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639093A2650B2BF007CB6B0 /* SearchGame.swift */; };
 		3639093D265108EB007CB6B0 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639093C265108EB007CB6B0 /* FavoritesView.swift */; };
@@ -16,7 +17,6 @@
 		3654A652264E7302002EE640 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3654A651264E7302002EE640 /* Kingfisher */; };
 		36567FED2658344800C7742C /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36567FEC2658344800C7742C /* SUImagePickerView.swift */; };
 		36B7CFE2264E5588004C19E5 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7CFE1264E5588004C19E5 /* GamesView.swift */; };
-		36B7CFE5264E55DB004C19E5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7CFE4264E55DB004C19E5 /* Model.swift */; };
 		36B7CFE8264E5627004C19E5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7CFE7264E5627004C19E5 /* ViewModel.swift */; };
 		36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */; };
 		36DBAC54264C8D6300996156 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC53264C8D6300996156 /* ContentView.swift */; };
@@ -28,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		2BC92187D3788DBAD8B0BFBA /* Pods-PlatziGameStream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziGameStream.debug.xcconfig"; path = "Target Support Files/Pods-PlatziGameStream/Pods-PlatziGameStream.debug.xcconfig"; sourceTree = "<group>"; };
+		34A671A027332712003F0CEF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		363909382650588F007CB6B0 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		3639093A2650B2BF007CB6B0 /* SearchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGame.swift; sourceTree = "<group>"; };
 		3639093C265108EB007CB6B0 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		364458E32654D5720092CB37 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		36567FEC2658344800C7742C /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		36B7CFE1264E5588004C19E5 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
-		36B7CFE4264E55DB004C19E5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		36B7CFE7264E5627004C19E5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		36DBAC4E264C8D6300996156 /* PlatziGameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziGameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC51264C8D6300996156 /* PlatziGameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatziGameStreamApp.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		36B7CFE3264E55BD004C19E5 /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
-				36B7CFE4264E55DB004C19E5 /* Model.swift */,
+				34A671A027332712003F0CEF /* Model.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -141,7 +141,6 @@
 				2BC92187D3788DBAD8B0BFBA /* Pods-PlatziGameStream.debug.xcconfig */,
 				B1FD313EDF29555F0B8EE2B6 /* Pods-PlatziGameStream.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -254,13 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B7CFE5264E55DB004C19E5 /* Model.swift in Sources */,
 				36DE2C6F264E4CC600DCEF51 /* HomeView.swift in Sources */,
 				364458E42654D5720092CB37 /* SaveData.swift in Sources */,
 				364458E02654D2100092CB37 /* ProfileView.swift in Sources */,
 				364458E22654D2CC0092CB37 /* EditProfileView.swift in Sources */,
 				36567FED2658344800C7742C /* SUImagePickerView.swift in Sources */,
 				36DBAC54264C8D6300996156 /* ContentView.swift in Sources */,
+				34A671A127332712003F0CEF /* Model.swift in Sources */,
 				3639093B2650B2BF007CB6B0 /* SearchGame.swift in Sources */,
 				36B7CFE2264E5588004C19E5 /* GamesView.swift in Sources */,
 				36B7CFE8264E5627004C19E5 /* ViewModel.swift in Sources */,
