@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @State var nombreUsuario = "Lorem"
-    
+    @State var imagenPerfil:UIImage = UIImage(named: "perfilEjemplo")!
     var body: some View {
         ZStack {
             Color("Marine")
@@ -26,7 +26,7 @@ struct ProfileView: View {
                     .padding()
                 
                 VStack{
-                    Image("perfilEjemplo")
+                    Image(uiImage: imagenPerfil)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 118, height: 118)
@@ -53,10 +53,30 @@ struct ProfileView: View {
             }
             
         }.onAppear {
+            if returnUiImage(named: "fotoperfil") != nil {
+                imagenPerfil = returnUiImage(named: "fotoperfil")!
+            }else{
+                print("No encontre la imagen")
+            }
+            
             print("Revisando si tengo datos de usuario en mis usersDefaults")
+            
+            if UserDefaults.standard.object(forKey: "datosUsuario") != nil{
+                nombreUsuario = UserDefaults.standard.stringArray(forKey: "datosUsuario")![2]
+            }else{
+                print("No encontre informacion del usuario")
+            }
         }
     }
-}
+    
+    func returnUiImage(named:String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false){
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+        }
+    }
+
 
 
 struct ModuloAjustes: View{

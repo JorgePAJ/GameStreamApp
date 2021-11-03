@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34275DB627330CD0005CA93F /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34275DB527330CCC005CA93F /* SUImagePickerView.swift */; };
 		343AD0412721D67600B6B3A6 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0402721D67600B6B3A6 /* GamesView.swift */; };
 		343AD0462721DC4500B6B3A6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AD0452721DC4500B6B3A6 /* Models.swift */; };
 		344B210D27319D2A002E8CF7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B210C27319D2A002E8CF7 /* GameView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34275DB527330CCC005CA93F /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		343AD0402721D67600B6B3A6 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		343AD0452721DC4500B6B3A6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		344B210C27319D2A002E8CF7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		3487F508272F667A00BE8E7E /* VistasModelos */ = {
 			isa = PBXGroup;
 			children = (
+				34275DB527330CCC005CA93F /* SUImagePickerView.swift */,
 				344B210E2731C245002E8CF7 /* SearchGame.swift */,
 				3487F509272F668E00BE8E7E /* ViewModel.swift */,
 				349C55112732FCDF007FB931 /* SaveData.swift */,
@@ -216,6 +219,7 @@
 				349C55122732FCDF007FB931 /* SaveData.swift in Sources */,
 				349C550E2732E1B6007FB931 /* ProfileView.swift in Sources */,
 				349C55102732F173007FB931 /* EditProfileView.swift in Sources */,
+				34275DB627330CD0005CA93F /* SUImagePickerView.swift in Sources */,
 				343AD0412721D67600B6B3A6 /* GamesView.swift in Sources */,
 				344B210F2731C245002E8CF7 /* SearchGame.swift in Sources */,
 				36DBAC52264C8D6300996156 /* PlatziGameStreamApp.swift in Sources */,
