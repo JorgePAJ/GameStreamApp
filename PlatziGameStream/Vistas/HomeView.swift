@@ -36,16 +36,14 @@ struct HomeView: View {
             }.tag(2)
             
  
-            
-            Text("Favoritos")
-                .font(.system(size: 30, weight: .bold, design: .rounded))
+            FavoritesView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favoritos")
                 }.tag(3)
             
            
-            
+             
             
             
             
@@ -392,7 +390,7 @@ struct SubModuloHome:View {
         juegoEncontrado.search(gameName: name)
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.3) {
             
             
             print("Cantidad E: \(juegoEncontrado.gameInfo.count)")
