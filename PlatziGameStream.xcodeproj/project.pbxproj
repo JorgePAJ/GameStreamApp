@@ -23,9 +23,11 @@
 		36DBAC56264C8D6400996156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC55264C8D6400996156 /* Assets.xcassets */; };
 		36DBAC59264C8D6400996156 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC58264C8D6400996156 /* Preview Assets.xcassets */; };
 		36DE2C6F264E4CC600DCEF51 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE2C6E264E4CC600DCEF51 /* HomeView.swift */; };
+		E1BA85E12710F9A59D96A565 /* Pods_PlatziGameStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED86FF04E11A38A8BE7920AF /* Pods_PlatziGameStream.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BC92187D3788DBAD8B0BFBA /* Pods-PlatziGameStream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziGameStream.debug.xcconfig"; path = "Target Support Files/Pods-PlatziGameStream/Pods-PlatziGameStream.debug.xcconfig"; sourceTree = "<group>"; };
 		363909382650588F007CB6B0 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		3639093A2650B2BF007CB6B0 /* SearchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGame.swift; sourceTree = "<group>"; };
 		3639093C265108EB007CB6B0 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		36DBAC58264C8D6400996156 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36DBAC5A264C8D6400996156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36DE2C6E264E4CC600DCEF51 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B1FD313EDF29555F0B8EE2B6 /* Pods-PlatziGameStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziGameStream.release.xcconfig"; path = "Target Support Files/Pods-PlatziGameStream/Pods-PlatziGameStream.release.xcconfig"; sourceTree = "<group>"; };
+		ED86FF04E11A38A8BE7920AF /* Pods_PlatziGameStream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlatziGameStream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3654A652264E7302002EE640 /* Kingfisher in Frameworks */,
+				E1BA85E12710F9A59D96A565 /* Pods_PlatziGameStream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 			children = (
 				36DBAC50264C8D6300996156 /* PlatziGameStream */,
 				36DBAC4F264C8D6300996156 /* Products */,
+				7F0C14926C06381C472B9C96 /* Pods */,
+				F919B8F231733448B1718F46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +135,24 @@
 			path = Vistas;
 			sourceTree = "<group>";
 		};
+		7F0C14926C06381C472B9C96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BC92187D3788DBAD8B0BFBA /* Pods-PlatziGameStream.debug.xcconfig */,
+				B1FD313EDF29555F0B8EE2B6 /* Pods-PlatziGameStream.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F919B8F231733448B1718F46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED86FF04E11A38A8BE7920AF /* Pods_PlatziGameStream.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +160,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36DBAC5D264C8D6400996156 /* Build configuration list for PBXNativeTarget "PlatziGameStream" */;
 			buildPhases = (
+				4F914E51D8EFB8C39B4CC63C /* [CP] Check Pods Manifest.lock */,
 				36DBAC4A264C8D6300996156 /* Sources */,
 				36DBAC4B264C8D6300996156 /* Frameworks */,
 				36DBAC4C264C8D6300996156 /* Resources */,
@@ -197,6 +223,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F914E51D8EFB8C39B4CC63C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlatziGameStream-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36DBAC4A264C8D6300996156 /* Sources */ = {
@@ -340,6 +391,7 @@
 		};
 		36DBAC5E264C8D6400996156 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC92187D3788DBAD8B0BFBA /* Pods-PlatziGameStream.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -362,6 +414,7 @@
 		};
 		36DBAC5F264C8D6400996156 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1FD313EDF29555F0B8EE2B6 /* Pods-PlatziGameStream.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
