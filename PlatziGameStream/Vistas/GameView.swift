@@ -1,10 +1,3 @@
-//
-//  GameView.swift
-//  PlatziGameStream
-//
-//  Created by Juan Villalvazo on 15/05/21.
-//
-
 import SwiftUI
 import AVKit
 import Kingfisher

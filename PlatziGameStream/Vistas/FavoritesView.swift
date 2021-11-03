@@ -1,11 +1,3 @@
-//
-//  FavoritesView.swift
-//  PlatziGameStream
-//
-//  Created by Juan Villalvazo on 16/05/21.
-//
-
-
 import SwiftUI
 import AVKit
 

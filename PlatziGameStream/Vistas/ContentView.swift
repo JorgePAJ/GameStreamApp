@@ -169,7 +169,7 @@ struct InicioSesiónView: View {
                 
                 
                 Text("Iniciar sesión con redes sociales").frame( maxWidth: .infinity,  alignment: .center).foregroundColor(.white)
-                
+                 
                 
                 HStack {
                         

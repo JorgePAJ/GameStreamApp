@@ -1,10 +1,3 @@
-//
-//  SearchGame.swift
-//  PlatziGameStream
-//
-//  Created by Juan Villalvazo on 15/05/21.
-//
-
 import Foundation
 
 class SearchGame: ObservableObject {

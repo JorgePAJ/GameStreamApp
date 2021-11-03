@@ -1,10 +1,3 @@
-//
-//  ProfileView.swift
-//  PlatziGameStream
-//
-//  Created by Juan Villalvazo on 18/05/21.
-//
-
 import SwiftUI
 
 struct ProfileView: View {
