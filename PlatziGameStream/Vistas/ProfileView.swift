@@ -2,148 +2,167 @@
 //  ProfileView.swift
 //  PlatziGameStream
 //
-//  Created by Jorge Plasencia on 03/11/21.
+//  Created by Juan Villalvazo on 18/05/21.
 //
 
 import SwiftUI
 
 struct ProfileView: View {
     
-    @State var nombreUsuario = "Lorem"
+    
+    @State var nombreUsuario:String = "Lorem"
     @State var imagenPerfil:UIImage = UIImage(named: "perfilEjemplo")!
+    
+    
     var body: some View {
+       
+            
         ZStack {
-            Color("Marine")
-                .ignoresSafeArea()
-                .navigationBarHidden(true)
+            
+            Color("Marine").ignoresSafeArea().navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
             
             VStack{
-                Text("Perfil")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                    .frame(minWidth: 0, idealWidth: 100,maxWidth: .infinity, alignment: .center)
-                    .padding()
+                    
+                  
+                    VStack{
+                            
+                          
+                        Image(uiImage: imagenPerfil ).resizable().aspectRatio(contentMode: .fill)
+                            .frame(width: 180.0, height: 180.0)
+                            .clipShape(Circle())
+                        Text(nombreUsuario)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                            
+
+                    }.padding(EdgeInsets(top: 64, leading: 0, bottom: 32, trailing: 0))
                 
-                VStack{
-                    Image(uiImage: imagenPerfil)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 118, height: 118)
-                        .clipShape(Circle())
-                 
-                    Text(nombreUsuario)
+               
+                    Text("Ajustes")
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    
-                    
-                    
-                }.padding(EdgeInsets(top: 16, leading: 0, bottom: 32, trailing: 0))
+                        .foregroundColor(Color.white).frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity,  alignment: .leading).padding(.leading,18)
                 
-                
-                
-                Text("Ajustes")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                    .frame(minWidth: 0, idealWidth: 100,maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading,18)
+           
                 ModuloAjustes()
-                
+             
                 Spacer()
             }
             
-        }.onAppear {
-            if returnUiImage(named: "fotoperfil") != nil {
-                imagenPerfil = returnUiImage(named: "fotoperfil")!
-            }else{
-                print("No encontre la imagen")
-            }
+         
+        } .onAppear(
             
-            print("Revisando si tengo datos de usuario en mis usersDefaults")
-            
-            if UserDefaults.standard.object(forKey: "datosUsuario") != nil{
-                nombreUsuario = UserDefaults.standard.stringArray(forKey: "datosUsuario")![2]
-            }else{
-                print("No encontre informacion del usuario")
-            }
-        }
-    }
+            perform: {
+                
+              //validar cuando no hay foto guardada
+               
+                
+                
+                if returnUiImage(named: "fotoperfil") != nil {
+                    
+                    imagenPerfil = returnUiImage(named: "fotoperfil")!
     
-    func returnUiImage(named:String) -> UIImage? {
-        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false){
+                }else{
+                    print("no encontre foto de perfil en base de datos")
+                    
+                }
+                
+                
+                
+                
+                print("revisando si tengo datos en user defaults")
+                
+                if UserDefaults.standard.object(forKey: "datosUsuario") != nil {
+                    
+                    nombreUsuario = UserDefaults.standard.stringArray(forKey: "datosUsuario")![2]
+                    print("Si encontre nombre de usuario \(nombreUsuario)")
+                }else{
+                    
+                    print("no encontre nombre de usuario guardado en objeto global de userdefaults")
+                    
+                }
+                
+            }
+        
+        
+        )
+       
+   }
+    
+    
+    func returnUiImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
             return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
         }
         return nil
-        }
     }
+    
+    
+    
+}
 
 
-
-struct ModuloAjustes: View{
+struct ModuloAjustes:View {
+    
     @State var isToggleOn = true
     @State var isEditProfileViewActive = false
     
     var body: some View{
-    
         
-        VStack(spacing: 3){
         
+        VStack{
+                 
             Button(action: {}, label: {
-                HStack{
-                    
-                
-                Text("Cuenta")
-                    .foregroundColor(.white)
-            Spacer()
-            Image(systemName: "chevron.right")
-                    .foregroundColor(.white)
-                }.padding()})
-                .background(Color("Blue-Gray"))
-                .clipShape(RoundedRectangle(cornerRadius: 1))
-                
+                    HStack { Text("Cuenta")
+                    .foregroundColor(Color.white)
+                    Spacer()
+                    Text(">")
+                        .foregroundColor(Color.white)}.padding()
+            }) .background(Color("Blue-Gray"))
+            .clipShape(RoundedRectangle(cornerRadius: 1.0)).padding(.horizontal, 8.0)
+            
             Button(action: {}, label: {
-                HStack{
+                    HStack { Text("Notificaciones")
+                    .foregroundColor(Color.white)
+                    Spacer()
                     
-                
-                Text("Notificaciones")
-                    .foregroundColor(.white)
-            Spacer()
-                    Toggle("",isOn: $isToggleOn)
-
-                }.padding()})
-                .background(Color("Blue-Gray"))
-                .clipShape(RoundedRectangle(cornerRadius: 1))
-           
+                        Toggle("", isOn: $isToggleOn)
+                    
+                    }.padding()
+            }) .background(Color("Blue-Gray"))
+            .clipShape(RoundedRectangle(cornerRadius: 1.0)).padding(.horizontal, 8.0)
+            
             Button(action: {isEditProfileViewActive = true}, label: {
-                HStack{
-                    
-                
-                Text("Editar Perfil")
-                    .foregroundColor(.white)
-            Spacer()
-            Image(systemName: "chevron.right")
-                    .foregroundColor(.white)
-                }.padding()})
-                .background(Color("Blue-Gray"))
-                .clipShape(RoundedRectangle(cornerRadius: 1))
+                    HStack { Text("Editar Perfil")
+                    .foregroundColor(Color.white)
+                    Spacer()
+                    Text(">")
+                        .foregroundColor(Color.white)}.padding()
+            }) .background(Color("Blue-Gray"))
+            .clipShape(RoundedRectangle(cornerRadius: 1.0)).padding(.horizontal, 8.0)
             
+           
             Button(action: {}, label: {
-                HStack{
-                    
+                    HStack { Text("Califica esta aplicación")
+                    .foregroundColor(Color.white)
+                    Spacer()
+                    Text(">")
+                        .foregroundColor(Color.white)}.padding()
+            }) .background(Color("Blue-Gray"))
+            .clipShape(RoundedRectangle(cornerRadius: 1.0)).padding(.horizontal, 8.0)
                 
-                Text("Califica esta aplicación")
-                    .foregroundColor(.white)
-            Spacer()
-            Image(systemName: "chevron.right")
-                    .foregroundColor(.white)
-                }.padding()})
-                .background(Color("Blue-Gray"))
-                .clipShape(RoundedRectangle(cornerRadius: 1))
+                
+            NavigationLink(
+                destination: EditProfileView()
+                ,
+                isActive: $isEditProfileViewActive,
+                label: {
+                    EmptyView()
+                })
             
-            NavigationLink(isActive: $isEditProfileViewActive, destination: {EditProfileView()}, label: {EmptyView()})
         }
-    
-    
+        
+        
     }
 }
 

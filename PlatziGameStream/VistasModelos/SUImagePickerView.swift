@@ -43,31 +43,32 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        
         if let UiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.image = Image(uiImage: UiImage)
             
-            if let data = UiImage.pngData(){
-                let document = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                
-                let url = document.appendingPathComponent("fotoperfil.png")
-                
-                do{
-                    
+            //Guardar Imagen en disco:
+           
+            if let data = UiImage.pngData() {
+                // Create URL
+                let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let url = documents.appendingPathComponent("fotoperfil.png")
+
+                do {
+                    // Write to Disk
                     try data.write(to: url)
-                    
-                }catch{
-                    print("No pude guardar fotografia en el folder del dipositivo \(error)")
+
+
+                } catch {
+                    print("No Pude Guardar en folder (\(error))")
                 }
             }
+            
+            
         }
         
+       
         
-        
-        
-        
-        
+        //cerrar vista de camara o libreria
         self.isPresented = false
     }
     

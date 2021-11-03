@@ -1,3 +1,11 @@
+//
+//  HomeView.swift
+//  PlatziGameStream
+//
+//  Created by Juan Villalvazo on 13/05/21.
+//
+
+
 import SwiftUI
 import AVKit
 
@@ -15,7 +23,7 @@ struct HomeView: View {
             
             
             
-            ProfileView()
+            ProfileView().navigationBarHidden(true).navigationBarBackButtonHidden(true)
                 .tabItem {
                     Image(systemName: "person")
                     Text("Perfil")
@@ -29,13 +37,13 @@ struct HomeView: View {
                 }.tag(1)
             
             
-            Home()
-                .tabItem {
+            Home().tabItem {
                 Image(systemName: "house")
                 Text("Inicio")
             }.tag(2)
             
  
+            
             FavoritesView()
                 .tabItem {
                     Image(systemName: "heart")
@@ -43,7 +51,7 @@ struct HomeView: View {
                 }.tag(3)
             
            
-             
+            
             
             
             
@@ -51,25 +59,16 @@ struct HomeView: View {
         }
         .accentColor(.white)
         
-        
-        
-        
-        
-        
+   
         
     }
     
     
     init() {
-        
         UITabBar.appearance().backgroundColor = UIColor (Color("TabBar-Color"))
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = UIColor (Color("TabBar-Color"))
-        
-        print("popular vistas")
     }
-    
-    
     
 }
 
@@ -149,7 +148,7 @@ struct SubModuloHome:View {
             HStack {
                 
                 Button(action: {watchGame(name: textoBusqueda)}, label: {
-                    Image(systemName: "magnifyingglass").foregroundColor(textoBusqueda.isEmpty ? Color.white : Color("Dark-Cyan") )
+                    Image(systemName: "magnifyingglass").foregroundColor(textoBusqueda.isEmpty ? Color("Amarello") : Color("Dark-Cyan") )
                 }).alert(isPresented: $isGameInfoEmpty) {
                     Alert(title: Text("Error"), message: Text("No se encontro el juego"), dismissButton: .default(Text("Entendido")))
                 }
@@ -390,7 +389,7 @@ struct SubModuloHome:View {
         juegoEncontrado.search(gameName: name)
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+1.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
             
             
             print("Cantidad E: \(juegoEncontrado.gameInfo.count)")

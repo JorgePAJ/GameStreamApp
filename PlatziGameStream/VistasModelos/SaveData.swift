@@ -2,57 +2,69 @@
 //  SaveData.swift
 //  PlatziGameStream
 //
-//  Created by Jorge Plasencia on 03/11/21.
+//  Created by Juan Villalvazo on 18/05/21.
 //
 
 import Foundation
 
-class SaveData{
-    
+class SaveData {
     var correo:String = ""
-    var contraseña:String = ""
+    var contrasena:String = ""
     var nombre:String = ""
     
     
-    func registrar(correo:String, contraseña:String) ->Bool{
-        UserDefaults.standard.set([correo,contraseña], forKey: "datosUsuario")
+    func registrar(correo:String, contraseña:String, nombre:String="") ->Bool{
+        UserDefaults.standard.set([correo,contraseña,nombre], forKey: "datosUsuario")
         return true
     }
     
-    func guardarDatos(correo:String, contraseña:String, nombre:String) -> Bool{
-        print("Dentro de la funcion guardarDatos obtuve:d \(correo) + \(contraseña) + \(nombre)")
+    func guardarDatos(correo:String,contrasena:String,nombre:String) -> Bool {
         
-        UserDefaults.standard.set([correo, contraseña, nombre], forKey: "datosUsuario")
+        print("Dentro de funcion Guardar Datos obtuve: \(correo) + \(contrasena) + \(nombre)")
+        UserDefaults.standard.set([correo,contrasena,nombre], forKey: "datosUsuario")
+        
         return true
     }
     
     func recuperarDatos() -> [String] {
         
         let datosUsuario:[String] = UserDefaults.standard.stringArray(forKey: "datosUsuario")!
-        print("Estoy en el metodo recuperarDatos y recupere: \(datosUsuario)")
+        
+        print("Estoy en metodo recuperar datos y recupere: \(datosUsuario)")
+        
         return datosUsuario
     }
     
-    func validar(correo:String, contraseña:String) -> Bool {
+    
+    func validar(correo:String,contrasena:String) -> Bool {
         
         var correoGuardado = ""
         var contraseñaGuardada = ""
         
-        print("Revisando si tengo datos en UserDefaults con el correo \(correo) y la contraseña \(contraseña)")
+        print("revisando si tengo datos en user defaults con correo: \(correo) y contraseña: \(contrasena)")
         
-        if UserDefaults.standard.object(forKey: "datosUsuario") != nil{
-            correoGuardado = UserDefaults.standard.stringArray(forKey: "datosUsuario")![0]
-            contraseñaGuardada = UserDefaults.standard.stringArray(forKey: "datosUsuario")![1]
-            print("El correo guardado es \(correoGuardado) y la contraseña guardad es \(contraseñaGuardada)")
+        
+        
+        if UserDefaults.standard.object(forKey: "datosUsuario") != nil {
             
-            if(correo == correoGuardado && contraseña == contraseñaGuardada){
+            correoGuardado = UserDefaults.standard.stringArray(forKey: "datosUsuario")![0]
+            
+            contraseñaGuardada = UserDefaults.standard.stringArray(forKey: "datosUsuario")![1]
+            
+            print("El correo guardado es: \(correoGuardado) y la contraseña guardada es: \(contraseñaGuardada)")
+            
+            if (correo == correoGuardado && contrasena == contraseñaGuardada){
                 return true
             }else{
                 return false
             }
+              
         }else{
-            print("No hay datos de usuario guardados en el UserDefault")
+            
+            print("No hay datos de usuario grabados en el objeto global de userdefaults")
             return false
         }
+        
     }
+    
 }

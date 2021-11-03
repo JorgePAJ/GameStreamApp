@@ -2,7 +2,7 @@
 //  PlatziGameStreamApp.swift
 //  PlatziGameStream
 //
-//  
+//  Created by Juan Villalvazo on 12/05/21.
 //
 
 import SwiftUI

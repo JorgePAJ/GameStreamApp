@@ -2,12 +2,14 @@
 //  ContentView.swift
 //  PlatziGameStream
 //
+//  Created by Juan Villalvazo on 12/05/21.
 //
-// Jorge Plasencia Ahm Jorgensen
+
 //
 //  ContentView.swift
 //  GameStream
 //
+//  Created by Juan Villalvazo on 28/04/21.
 //
 
 import SwiftUI
@@ -37,14 +39,19 @@ struct ContentView: View {
                 
                 InicioYRegistroView()
                 
-            }.navigationBarHidden(true)
-            
             }
             
+            }.navigationBarHidden(true)
             
         }
+    
+    
+    
+    
+    
     }
 }
+
 
 struct InicioYRegistroView:View {
     
@@ -98,7 +105,6 @@ struct InicioSesiónView: View {
     @State var isPantallaHomeActive:Bool = false
     @State var ifNotUserFound = false
     
-    
     var body: some View {
         
      
@@ -142,20 +148,20 @@ struct InicioSesiónView: View {
                     .padding(.bottom)
                 
                 Button(action: {iniciarSesion()},
-                                       label:
-                                       {
-                                            Text("Iniciar Sesión").fontWeight(.bold)
-                                                .foregroundColor(.white)
-                                                .frame(maxWidth: .infinity, alignment: .center)
-                                                .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
-                                                .overlay(RoundedRectangle(cornerRadius: 6.0)
-                                                .stroke(Color("Dark-Cyan"), lineWidth: 1.0)
-                                                .shadow(color: .white, radius: 6))
-                                       }).alert(isPresented: $ifNotUserFound, content:
-                                                    {
-                                                        Alert(title: Text("Error"), message: Text("Usuario o contraseña incorrecta"), dismissButton: .default(Text("Entendido")))
-                                                    }
-                                                         )
+                                                     label:
+                                                     {
+                                                          Text("Iniciar Sesión").fontWeight(.bold)
+                                                              .foregroundColor(.white)
+                                                              .frame(maxWidth: .infinity, alignment: .center)
+                                                              .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                                                              .overlay(RoundedRectangle(cornerRadius: 6.0)
+                                                              .stroke(Color("Dark-Cyan"), lineWidth: 1.0)
+                                                              .shadow(color: .white, radius: 6))
+                                                     }).alert(isPresented: $ifNotUserFound, content:
+                                                                  {
+                                                                      Alert(title: Text("Error"), message: Text("Usuario o contraseña incorrecta"), dismissButton: .default(Text("Entendido")))
+                                                                  }
+                                                                       ).padding(.bottom)
                 
                 
                 
@@ -219,7 +225,7 @@ struct InicioSesiónView: View {
         
         // Creación de instancias. En este caso la clase SaveData
         let objetoActualizadorDatos = SaveData()
-        let resultado = objetoActualizadorDatos.validar(correo: self.correo,contraseña: self.contraseña)
+        let resultado = objetoActualizadorDatos.validar(correo: self.correo,contrasena: self.contraseña)
         
         if resultado == true
         {
@@ -358,7 +364,7 @@ struct RegistroView: View {
 
 
                 // Navegar a la pantalla Home
-                        NavigationLink(destination: Home(), isActive: $isPantallaHomeActive, label: {EmptyView()})
+                        NavigationLink(destination: Home(), isActive: $isPantallaHomeActive, label: {EmptyView()}).padding(.bottom)
                 
               
                         
@@ -427,12 +433,9 @@ struct RegistroView: View {
             let resultado = objetoActualizadorDatos.registrar(correo: self.correo, contraseña: self.contraseña)
             
             // Activar la pantalla home
-
             print("Se guardaron los datos con exito?: \(resultado)")
         }
-        
-        
-}
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -441,7 +444,7 @@ struct ContentView_Previews: PreviewProvider {
      
         Group {
             ContentView()
-            
+            InicioSesiónView().background(Color(red: 18/255, green: 31/255, blue: 61/255, opacity: 100).ignoresSafeArea())
         }
         
     }
@@ -458,7 +461,8 @@ struct ContentView_Previews: PreviewProvider {
  //4.- Branch 04 (PantallaHome): UI de pantalla Home
  
  
- 
+ //5.- Branch 05 (IntroduccionMVVM) : Añadidos archivos Model.swift - ViewModel.swift, implementacion de recuperacion de datos json.
  
  
  */
+}

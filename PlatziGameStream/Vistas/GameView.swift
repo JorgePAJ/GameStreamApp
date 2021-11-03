@@ -1,3 +1,10 @@
+//
+//  GameView.swift
+//  PlatziGameStream
+//
+//  Created by Juan Villalvazo on 15/05/21.
+//
+
 import SwiftUI
 import AVKit
 import Kingfisher
@@ -177,10 +184,10 @@ struct extraViews:View {
                     VStack(alignment: .leading) {
                         HStack{
                             
-                            Image( "Jorge").resizable().aspectRatio(contentMode: .fit).frame(width: 64, height: 64).accentColor(.white).padding([.top, .leading])
+                            Image( "perfilEjemplo").resizable().aspectRatio(contentMode: .fit).frame(width: 64, height: 64).accentColor(.white).padding([.top, .leading])
                             
                             VStack(alignment: .leading) {
-                                Text("Jorge").bold().foregroundColor(Color.white)
+                                Text("Lorem").bold().foregroundColor(Color.white)
                                 
                                 Text("Hace 18 horas").foregroundColor(Color.white)
                             }
@@ -190,7 +197,7 @@ struct extraViews:View {
                         
                         
                         
-                        Text("Llevo 3 dias atorado en el segundo nivel, probablemente seran 6 dias mas :,c help").foregroundColor(.white).padding(.leading,8)
+                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor, mauris lorem.  ").foregroundColor(.white).padding(.leading,8)
                             .frame( height: 80)
                         
                         
@@ -208,9 +215,10 @@ struct extraViews:View {
                     VStack(alignment: .leading) {
                         HStack{
                             
-                            Image( "Luisa").resizable().aspectRatio(contentMode: .fit).frame(width: 64, height: 64).accentColor(.white).padding([.top,.leading])
+                            Image( "perfilEjemplo").resizable().aspectRatio(contentMode: .fit).frame(width: 64, height: 64).accentColor(.white).padding([.top, .leading])
+                            
                             VStack(alignment: .leading) {
-                                Text("Luisa").bold().foregroundColor(Color.white)
+                                Text("Ipsum").bold().foregroundColor(Color.white)
                                 
                                 Text("Hace 8 horas").foregroundColor(Color.white)
                             }
@@ -219,7 +227,7 @@ struct extraViews:View {
                         }
                         
                         
-                        Text("Me divertio muchisimo este juego! ya quiero jugar la segunda parte :D").foregroundColor(.white)
+                        Text(" Vestibulum auctor, mauris lorem molestie nibh.Lorem ipsum consectetur adipiscing elit.    ").foregroundColor(.white)
                             .padding(.horizontal, 8.0)
                             .frame( height: 80)
                         

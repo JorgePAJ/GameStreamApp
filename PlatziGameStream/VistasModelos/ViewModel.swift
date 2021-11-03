@@ -1,3 +1,10 @@
+//
+//  ViewModel.swift
+//  PlatziGameStream
+//
+//  Created by Juan Villalvazo on 13/05/21.
+//
+
 import Foundation
 
 
@@ -7,6 +14,7 @@ class ViewModel: ObservableObject {
 // 1.
   @Published var gamesInfo = [Game]()
   
+ 
     
     init() {
         let url = URL(string: "https://gamestream-api.herokuapp.com/api/games")!
@@ -40,7 +48,9 @@ class ViewModel: ObservableObject {
         }.resume()
     }
     
+    
+  
+    
 
 }
-
 
